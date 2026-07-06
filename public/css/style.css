@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik+Spray+Paint&display=swap");
+
+:root {
+  --gap: 8vw;
+  --bg: black;
+  --text: white;
+  --highlight: white;
+  --border: 5px solid var(--highlight);
+  --border-opposite: 5px solid var(--bg);
+  --transition: 0.2s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", system-ui;
+}
+
+body {
+  color: var(--text);
+  background-color: var(--bg);
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+  padding: 8px;
+  position: relative;
+}
+
+.dark {
+  --bg: black;
+  --text: white;
+  --highlight: white;
+  --border: 5px solid var(--highlight);
+  --border-opposite: 5px solid var(--bg);
+}
+
+.light {
+  --bg: white;
+  --text: black;
+  --highlight: black;
+  --border: 5px solid var(--highlight);
+  --border-opposite: 5px solid var(--bg);
+}
+
+.ocean {
+  --bg: #03045e;
+  --text: #caf0f8;
+  --highlight: #90e0ef;
+  --border: 5px solid var(--highlight);
+  --border-opposite: 5px solid var(--bg);
+}
+
+.child {
+  --bg: #9b5de5;
+  --text: #00f5d4;
+  --highlight: #fee440;
+  --border: 5px solid var(--highlight);
+  --border-opposite: 5px solid var(--bg);
+}
+
+.soft {
+  --bg: #780116;
+  --text: #f7b538;
+  --highlight: #d8572a;
+  --border: 5px solid var(--highlight);
+  --border-opposite: 5px solid var(--bg);
+}
+
+a {
+  color: var(--text);
+}
+
+a:hover {
+  color: var(--highlight);
+}
+
+button,
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+  border: var(--border);
+  padding: 1rem;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+button:hover,
+.button:hover {
+  border: var(--border-opposite);
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+.theme-btn.active {
+  border: var(--border-opposite);
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+.mobile {
+  display: none !important;
+}
+
+.desktop {
+  display: contents !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .mobile {
+    display: contents !important;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+
+  button,
+  .button {
+    padding: 0.5rem;
+  }
+}

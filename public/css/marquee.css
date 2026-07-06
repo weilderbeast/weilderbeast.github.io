@@ -1,0 +1,54 @@
+.marquee {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  white-space: nowrap;
+}
+
+.marquee[data-marquee-axis="y"] {
+  white-space: normal;
+}
+
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  will-change: transform;
+  line-height: 1;
+  height: 100%;
+  color: inherit;
+}
+
+.marquee[data-marquee-axis="y"] .marquee-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marquee-segment {
+  display: inline-block;
+  flex-shrink: 0;
+  line-height: 1;
+  color: inherit;
+}
+
+.marquee[data-marquee-axis="y"] .marquee-segment {
+  display: block;
+}
+
+@keyframes marquee-scroll-x {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(var(--marquee-distance), 0, 0);
+  }
+}
+
+@keyframes marquee-scroll-y {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, var(--marquee-distance), 0);
+  }
+}

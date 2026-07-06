@@ -76,7 +76,7 @@ const baseTemplate = /*html*/ `
             </div>    
         </div>
     </div>
-    <div class="section section-7 text-fit button centered">
+    <div class="section section-7 text-fit button centered" data-toggle="modal" data-target="#about">
         about
     </div>
     <div class="section section-8">
@@ -93,8 +93,8 @@ const baseTemplate = /*html*/ `
         "
         >
         <div>
-            <a href="#">github</a>
-            <a href="#">contact</a>
+            <a href="https://github.com/weilderbeast">github</a>
+            <a href="mailto:cirstoiu.bogdan.florin@gmail.com">contact</a>
         </div>
 
         <div>

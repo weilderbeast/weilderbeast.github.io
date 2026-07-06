@@ -28,7 +28,7 @@ const baseTemplate = /*html*/ `
             ></div>
         </div>
         <div class="mobile">
-            <div class="text-fit">
+            <div class="text-fit" data-toggle="modal" data-target="#projects">
                 projects
             </div>
         </div>
@@ -40,7 +40,7 @@ const baseTemplate = /*html*/ `
             </div>
         </div>
         <div class="desktop">
-            <div class="text-fit">
+            <div class="text-fit" data-toggle="modal" data-target="#projects">
                 projects
             </div>
         </div>
@@ -148,6 +148,22 @@ const baseTemplate = /*html*/ `
                 <div class="modal-body">
                     <p>Bogdan-Florin Cîrstoiu<br>Bucharest - Romania</p>
                     <p>Aspiring web developer, with a passion for the inner-workings of day-to-day things, always ready for a challenge, and extremely curious by nature.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="projects" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">projects</h5>
+                    <div class="btn-close" data-dismiss="modal">x</div>
+                </div>
+                <div class="modal-body">
+                    <p>nothing here (yet).</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" data-dismiss="modal">close</button>

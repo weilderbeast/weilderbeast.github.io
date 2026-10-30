@@ -77,9 +77,10 @@ const render = async (
     root.append(cont);
   }
 
+  initModals();
+
   await onLoad?.(params);
 
-  initModals();
   initThemes();
 
   loadingscreen.classList.remove("show");
@@ -97,6 +98,12 @@ export const registerPage = <P extends Params>(page: Page<P>) => {
 export const getPage = (term: string): Page<any> | undefined =>
   term.startsWith("/") ? resolvePath(term)?.page : pages[term];
 
+const currentPath = () => location.hash.slice(1) || "/";
+
+const resolveCurrent = (fallback: string): Match | undefined =>
+  resolvePath(currentPath()) ??
+  (pages[fallback] ? { page: pages[fallback], params: {} } : undefined);
+
 export const navigate = (target: string, params: Params = {}) => {
   const page = pages[target];
 
@@ -105,38 +112,24 @@ export const navigate = (target: string, params: Params = {}) => {
     return;
   }
 
-  history.pushState({}, page.title, buildUrl(page.url, params));
-  render(page, params);
+  const hash = buildUrl(page.url, params);
+
+  if (currentPath() === hash) {
+    render(page, params);
+    return;
+  }
+
+  location.hash = hash;
 };
 
 export const initRouter = (el: HTMLElement, fallback = "home") => {
   root = el;
 
-  const resolve = (): Match | undefined =>
-    resolvePath(location.pathname) ??
-    (pages[fallback] ? { page: pages[fallback], params: {} } : undefined);
-
-  window.addEventListener("popstate", () => {
-    const match = resolve();
+  window.addEventListener("hashchange", () => {
+    const match = resolveCurrent(fallback);
     if (match) render(match.page, match.params);
   });
 
-  document.addEventListener("click", (e) => {
-    const a = (e.target as HTMLElement).closest("a");
-    if (!a || a.origin !== location.origin || a.target) return;
-
-    const match = resolvePath(a.pathname);
-    if (!match) return;
-
-    e.preventDefault();
-    history.pushState({}, match.page.title, a.pathname);
-    render(match.page, match.params);
-  });
-
-  const match = resolve();
-
-  if (match) {
-    history.replaceState({}, match.page.title, location.pathname);
-    render(match.page, match.params);
-  }
+  const match = resolveCurrent(fallback);
+  if (match) render(match.page, match.params);
 };

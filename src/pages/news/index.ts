@@ -106,7 +106,7 @@ const hnloader = async (containerId: string) => {
       return /*html*/ `
         <div class="category">
             <article class="story small">
-                <h2 class="headline"><a href="/story/hn/${story.id}">${story.title}</a></h2>
+                <h2 class="headline"><a href="#/story/hn/${story.id}">${story.title}</a></h2>
                 <div class="byline">${story.by ?? "no author"}</div>
             </article>
         </div>
@@ -142,7 +142,7 @@ const nytloader = async (containerId: string) => {
         ${image}
         <div class="text">
         <div class="kicker">${headline.categories[0]}</div>
-        <h2 class="headline"><a href="/story/nyt/0">${headline.title}</a></h2>
+        <h2 class="headline"><a href="#/story/nyt/0">${headline.title}</a></h2>
         <p class="summary">${headline.description}</p>
         <div class="byline">${headline.author} · New York Times</div>
         </div>
@@ -155,7 +155,7 @@ const nytloader = async (containerId: string) => {
     const item = /*html*/ `
             <article class="story">
                 <div class="kicker">${categories[0]}</div>
-                <h2 class="headline"><a href="/story/nyt/${idx + 1}">${title}</a></h2>
+                <h2 class="headline"><a href="#/story/nyt/${idx + 1}">${title}</a></h2>
                 <p class="summary">${clean(description)}</p>
                 <div class="byline">${author}</div>
             </article>
@@ -176,7 +176,7 @@ const guardianloader = async (containerId: string) => {
     const item = /*html*/ `
             <article class="story">
                 <div class="kicker">${categories[0]}</div>
-                <h2 class="headline"><a href="/story/guardian/${idx}">${title}</a></h2>
+                <h2 class="headline"><a href="#/story/guardian/${idx}">${title}</a></h2>
                 <p class="summary">${clean(description)}</p>
                 <div class="byline">${author}</div>
             </article>

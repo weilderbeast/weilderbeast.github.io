@@ -22,7 +22,11 @@ function onKeydown(event: KeyboardEvent): void {
 
 function buildModal(container: HTMLElement): void {
   const id = container.id;
-  if (!id || instances.has(id)) return;
+  if (!id) return;
+
+  const existing = instances.get(id);
+  if (existing?.element === container) return;
+  existing?.backdrop?.remove();
 
   const closable = container.dataset.closable !== "false";
   const useBackdrop = container.dataset.backdrop !== "false";

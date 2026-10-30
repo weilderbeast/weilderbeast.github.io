@@ -74,7 +74,8 @@ const template = (a: Article) => /*html*/ `
   </div>
   ${
     a.image
-      ? `<figure class="article-hero">
+      ? /*html*/ `
+        <figure class="article-hero">
           <img src="${a.image}" alt="" />
           <figcaption>${a.source}</figcaption>
         </figure>`
@@ -82,7 +83,7 @@ const template = (a: Article) => /*html*/ `
   }
   ${a.body ? `<div class="article-body">${a.body}</div>` : ""}
   <div class="article-tags">
-    <a href="/news">Back to news</a>
+    <a href="#/news">Back to news</a>
     ${a.link ? `<a href="${a.link}" target="_blank" rel="noopener">Read original</a>` : ""}
   </div>
 `;

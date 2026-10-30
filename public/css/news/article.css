@@ -7,6 +7,8 @@
   max-width: 720px;
   margin: 32px auto;
   padding: 0 20px;
+  height: 100%;
+  overflow-y: auto;
 }
 
 .article-page .headline {

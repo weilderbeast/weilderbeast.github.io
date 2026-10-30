@@ -33,7 +33,7 @@ const content = () => {
   const root = /*html*/ `
     <div class="container row">
         <a class="kicker button unstyled-btn" href="#">Home</a>
-        <button class="kicker unstyled-btn" data-toggle="modal" data-target="#news-theme-picker">Theme</button>
+        <button class="kicker unstyled-btn" data-toggle="modal" data-target="#theme">Theme</button>
         <button class="kicker unstyled-btn" data-toggle="modal" data-target="#about-modal">About</button>
     </div>
     <main class="container frontpage">
@@ -52,7 +52,7 @@ const content = () => {
         </section>
     </main>
 
-    <div id="news-theme-picker" class="modal">
+    <div id="theme" class="modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -83,6 +83,35 @@ const content = () => {
                 <div class="modal-footer">
                     <button type="button" data-dismiss="modal">close</button>
                     <button type="button" id="theme-apply-btn">apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about-modal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">about</h5>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        This site does not own any of the content shown. All headlines,
+                        summaries, images, and other data belong to their respective
+                        owners and are displayed for informational purposes only.
+                    </p>
+                    <p>Sources:</p>
+                    <p>
+                        <a href="https://www.nytimes.com" target="_blank" rel="noopener">The New York Times</a><br />
+                        <a href="https://www.theguardian.com" target="_blank" rel="noopener">The Guardian</a><br />
+                        <a href="https://news.ycombinator.com" target="_blank" rel="noopener">Hacker News (Y Combinator)</a>
+                    </p>
+                    <p>
+                        Visit the original publishers to read full articles and support their work.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal">close</button>
                 </div>
             </div>
         </div>

@@ -32,6 +32,7 @@ const styles = [
 const content = () => {
   const root = /*html*/ `
     <div class="container row">
+        <a class="kicker button unstyled-btn" href="#">Home</a>
         <button class="kicker unstyled-btn" data-toggle="modal" data-target="#news-theme-picker">Theme</button>
         <button class="kicker unstyled-btn" data-toggle="modal" data-target="#about-modal">About</button>
     </div>

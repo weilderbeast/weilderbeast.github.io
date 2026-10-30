@@ -77,6 +77,12 @@ function wireTriggers(root: ParentNode): void {
     });
 }
 
+export function closeAllModals() {
+  instances.forEach((_, key) => {
+    closeModal(key);
+  });
+}
+
 export function initModals(root: ParentNode = document): void {
   const containers = root.querySelectorAll<HTMLElement>(".modal");
   containers.forEach(buildModal);

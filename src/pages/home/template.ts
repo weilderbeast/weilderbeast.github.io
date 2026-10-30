@@ -163,7 +163,9 @@ const baseTemplate = /*html*/ `
                     <div class="btn-close" data-dismiss="modal">x</div>
                 </div>
                 <div class="modal-body">
-                    <p>nothing here (yet).</p>
+                    <a href="#/news" type="button">
+                        News Platform
+                    </a>
                 </div>
                 <div class="modal-footer">
                     <button type="button" data-dismiss="modal">close</button>

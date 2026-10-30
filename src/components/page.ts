@@ -1,5 +1,5 @@
 import { qsRequired } from "../utils/utils";
-import initModals from "./modal";
+import initModals, { closeAllModals } from "./modal";
 import { initThemes } from "./theme";
 
 export type Params = Record<string, string>;
@@ -78,6 +78,7 @@ const render = async (
   }
 
   initModals();
+  closeAllModals();
 
   await onLoad?.(params);
 

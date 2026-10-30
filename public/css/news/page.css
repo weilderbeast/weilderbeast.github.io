@@ -22,7 +22,8 @@ p {
   padding: 0 20px;
 }
 
-button {
+button,
+a.btn {
   border: none;
   background-color: transparent;
   padding: 4px 8px;
@@ -30,6 +31,7 @@ button {
   font-family: "Geist", system-ui, sans-serif;
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .app {
@@ -45,12 +47,14 @@ button {
   width: 100%;
 }
 
-.unstyled-btn {
+.unstyled-btn,
+a.btn {
   background-color: transparent;
   color: var(--text);
 }
 
-button:hover {
+button:hover,
+a.btn {
   text-decoration: underline;
 }
 

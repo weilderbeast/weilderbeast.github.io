@@ -1,0 +1,53 @@
+body {
+  font-family: "Press Start 2P", system-ui;
+}
+
+button,
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+  border: var(--border);
+  padding: 1rem;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+button:hover,
+.button:hover {
+  border: var(--border-opposite);
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+.theme-btn.active {
+  border: var(--border-opposite);
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+.mobile {
+  display: none !important;
+}
+
+.desktop {
+  display: contents !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .mobile {
+    display: contents !important;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+
+  button,
+  .button {
+    padding: 0.5rem;
+  }
+}

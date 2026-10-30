@@ -14,7 +14,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Press Start 2P", system-ui;
 }
 
 body {
@@ -23,8 +22,36 @@ body {
   width: 100dvw;
   height: 100dvh;
   overflow: hidden;
+  position: relative;
+}
+
+.app {
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
   padding: 8px;
   position: relative;
+}
+
+.loading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: inherit;
+  color: inherit;
+  opacity: 0;
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999999;
+  display: flex;
+}
+
+.loading.show {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .dark {
@@ -73,54 +100,4 @@ a {
 
 a:hover {
   color: var(--highlight);
-}
-
-button,
-.button {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  cursor: pointer;
-  transition: var(--transition);
-  border: var(--border);
-  padding: 1rem;
-  background-color: var(--bg);
-  color: var(--text);
-}
-
-button:hover,
-.button:hover {
-  border: var(--border-opposite);
-  background-color: var(--text);
-  color: var(--bg);
-}
-
-.theme-btn.active {
-  border: var(--border-opposite);
-  background-color: var(--text);
-  color: var(--bg);
-}
-
-.mobile {
-  display: none !important;
-}
-
-.desktop {
-  display: contents !important;
-}
-
-@media screen and (max-width: 1024px) {
-  .mobile {
-    display: contents !important;
-  }
-
-  .desktop {
-    display: none !important;
-  }
-
-  button,
-  .button {
-    padding: 0.5rem;
-  }
 }

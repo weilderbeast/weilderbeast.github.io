@@ -1,0 +1,213 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  outline: 0;
+  overflow: hidden;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1040;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(2px);
+}
+
+.modal-backdrop.fade {
+  transition: opacity 0.15s linear;
+  opacity: 0;
+}
+
+.modal-backdrop.fade.show {
+  opacity: 1;
+}
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 1.75rem auto;
+  pointer-events: auto;
+}
+
+.modal.fade .modal-dialog {
+  transition:
+    transform 0.2s ease-out,
+    opacity 0.2s ease-out;
+  transform: translateY(-12px);
+  opacity: 0;
+}
+
+.modal.fade.show .modal-dialog {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: var(--bg, #fff);
+  color: var(--text, #121212);
+  border: 1px solid var(--text, #121212);
+  border-top: 4px double var(--text, #121212);
+  border-radius: 0;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  padding: 20px 24px 24px;
+  min-width: 560px;
+  max-width: min(720px, 90dvw);
+  gap: 16px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  padding: 0 0 12px;
+  border-bottom: 1px solid var(--text, #121212);
+}
+
+.modal-header * {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.modal-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.modal-body p:first-of-type::first-letter {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.6em;
+  font-weight: 700;
+  float: left;
+  line-height: 0.9;
+  padding: 4px 6px 0 0;
+}
+
+.modal-body a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--text, #121212);
+}
+
+.modal-footer button {
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border: 1px solid var(--text, #121212);
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.modal-footer button:hover,
+.modal-footer button:focus-visible {
+  background: var(--text, #121212);
+  color: var(--bg, #fff);
+}
+
+.modal-footer button.primary {
+  background: var(--text, #121212);
+  color: var(--bg, #fff);
+}
+
+.modal-footer button.primary:hover,
+.modal-footer button.primary:focus-visible {
+  background: transparent;
+  color: var(--text, #121212);
+}
+
+.btn-close {
+  border: none;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0 4px;
+  color: inherit;
+  opacity: 0.6;
+}
+
+.btn-close:hover,
+.btn-close:focus-visible {
+  opacity: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .modal-dialog {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+  }
+
+  .modal-content {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 16px;
+    border-left: none;
+    border-right: none;
+  }
+
+  .modal-header * {
+    font-size: 1.25rem;
+  }
+}
+
+button,
+.button {
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 4px 8px;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+button:hover,
+.button:hover {
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+.theme-btn.active {
+  background-color: var(--text);
+  color: var(--bg);
+}

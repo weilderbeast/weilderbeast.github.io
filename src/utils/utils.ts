@@ -1,3 +1,5 @@
+import DOMPurify from "dompurify";
+
 /**
  * Query selector
  * @param selector
@@ -120,3 +122,46 @@ export function make<K extends keyof TagMap>(
 
   return el;
 }
+
+type ApiResponse<T> =
+  | { ok: true; data: T }
+  | { ok: false; error: string; status?: number };
+
+/**
+ * Return an ApiResponse<T> response for any query, for easier validation
+ * @param url
+ * @param init
+ * @returns
+ */
+export const http = async <T>(
+  url: string,
+  init?: RequestInit,
+): Promise<ApiResponse<T>> => {
+  try {
+    const res = await fetch(url, init);
+    if (!res.ok)
+      return { ok: false, error: res.statusText, status: res.status };
+    return { ok: true, data: (await res.json()) as T };
+  } catch (e) {
+    return {
+      ok: false,
+      error: e instanceof Error ? e.message : "Network error",
+    };
+  }
+};
+
+export const clean = (html: string) =>
+  DOMPurify.sanitize(html, {
+    ALLOWED_TAGS: [
+      "p",
+      "a",
+      "em",
+      "strong",
+      "ul",
+      "ol",
+      "li",
+      "blockquote",
+      "br",
+    ],
+    ALLOWED_ATTR: ["href"],
+  });

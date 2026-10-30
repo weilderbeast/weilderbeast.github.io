@@ -1,0 +1,90 @@
+.masthead {
+  text-align: center;
+  padding: 24px 0 12px;
+  border-bottom: 1px solid var(--highlight);
+}
+
+.masthead h1 {
+  margin: 0;
+  font-family: "Old English Text MT", "UnifrakturCook", Georgia, serif;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.masthead .date {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.article {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--highlight);
+}
+
+.article:last-child {
+  border-bottom: none;
+}
+
+.kicker {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--highlight);
+}
+
+.headline {
+  margin: 4px 0 8px;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.article.lead .headline {
+  font-size: 2.4rem;
+  line-height: 1.1;
+}
+
+.summary {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.byline {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+}
+
+.article img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.caption {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  margin: 0 0 12px;
+  padding-top: 8px;
+  border-top: var(--border);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

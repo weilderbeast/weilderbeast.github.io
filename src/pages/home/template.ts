@@ -1,4 +1,4 @@
-import { make } from "../utils/utils";
+import { make } from "../../utils/utils";
 
 const baseTemplate = /*html*/ `
     <div class="section section-1 marquee">brutal</div>
@@ -173,28 +173,7 @@ const baseTemplate = /*html*/ `
     </div>
 `;
 
-const loadingScreenTemplate = `
-    loading...
-`;
-
 export const base = make("div", {
   class: "fancy-grid",
   html: baseTemplate,
-});
-
-export const loading = make("div", {
-  text: loadingScreenTemplate,
-  style: {
-    position: "absolute",
-    left: "0",
-    right: "0",
-    width: "100dvw",
-    height: "100dvh",
-    backgroundColor: "inherit",
-    color: "inherit",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: "999999999",
-  },
 });

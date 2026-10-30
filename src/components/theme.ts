@@ -3,6 +3,15 @@ import { closeModal } from "./modal";
 
 let selected = "light";
 
+export const loadTheme = () => {
+  const existing = localStorage.getItem("theme");
+
+  if (existing) {
+    selected = existing;
+    document.body.className = `${selected}`;
+  }
+};
+
 export const initThemes = () => {
   const btns = qsa<HTMLButtonElement>(".theme-btn");
   const applyBtn = qsRequired<HTMLButtonElement>("#theme-apply-btn");
